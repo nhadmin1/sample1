@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Test Directory — MedCore Diagnostics</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { bg: '#f5f3ef', navy: '#0a1628', teal: '#0d9488', 'teal-light': '#ccfbf1' },
+          fontFamily: { sans: ['Sora', 'sans-serif'], serif: ['DM Serif Display', 'serif'] }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { background-color: #f5f3ef; scroll-behavior: smooth; }
+    .glass-nav { background: rgba(245, 243, 239, 0.85); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(10, 22, 40, 0.1); }
+    .reveal { opacity: 0; transform: translateY(20px); transition: all 0.6s ease-out; }
+    .reveal.active { opacity: 1; transform: translateY(0); }
+    /* Custom Scrollbar for the Test List */
+    .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+    .custom-scrollbar::-webkit-scrollbar-thumb { background: #0d9488; border-radius: 10px; }
+  </style>
+</head>
+<body class="text-gray-800 font-sans antialiased bg-bg">
+
+  <nav class="fixed w-full z-50 glass-nav">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3">
+        <div class="w-10 h-10 bg-navy text-white rounded-xl flex items-center justify-center text-xl shadow-lg"><i class="fas fa-dna"></i></div>
+        <span class="font-serif text-2xl text-navy">Med<span class="text-teal">Core</span></span>
+      </a>
+      <div class="hidden md:flex gap-8 font-semibold text-sm text-gray-500">
+        <a href="index.html" class="hover:text-teal transition">Home</a>
+        <a href="index.html#services" class="hover:text-teal transition">Services</a>
+        <a href="#reports" class="hover:text-teal transition">Download Reports</a>
+      </div>
+      <a href="https://wa.me/919876512345" class="bg-teal text-white px-6 py-2.5 rounded-lg text-sm font-bold transition shadow-lg flex items-center gap-2">
+        <i class="fab fa-whatsapp"></i> Support
+      </a>
+    </div>
+  </nav>
+
+  <main class="pt-32 pb-20 max-w-7xl mx-auto px-6">
+    
+    <div class="reveal active mb-12">
+      <h1 class="font-serif text-4xl lg:text-6xl text-navy mb-4">Diagnostics <em class="text-teal not-italic">& Directory</em></h1>
+      <p class="text-gray-500 max-w-2xl">Search from over 500+ clinical tests. Book home collection or find your nearest center.</p>
+    </div>
+
+    <div class="grid lg:grid-cols-3 gap-10">
+      
+      <div class="lg:col-span-2 space-y-8">
+        <div class="bg-white p-6 rounded-3xl shadow-sm border border-gray-100 reveal active">
+          <div class="relative mb-8">
+            <input type="text" placeholder="Search for tests (e.g. Thyroid, CBC, Vitamin D)..." 
+                   class="w-full pl-14 pr-6 py-4 bg-bg border-none rounded-2xl focus:ring-2 focus:ring-teal outline-none font-medium">
+            <i class="fas fa-search absolute left-5 top-1/2 -translate-y-1/2 text-gray-400 text-lg"></i>
+          </div>
+
+          <div class="overflow-hidden">
+            <table class="w-full text-left">
+              <thead>
+                <tr class="text-xs uppercase tracking-widest text-gray-400 border-b border-gray-50">
+                  <th class="pb-4 font-bold">Test Description</th>
+                  <th class="pb-4 font-bold">Price</th>
+                  <th class="pb-4 text-right font-bold">Action</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-gray-50 font-medium">
+                <tr class="group hover:bg-bg/50 transition">
+                  <td class="py-5">
+                    <p class="text-navy group-hover:text-teal transition">Complete Blood Count (CBC)</p>
+                    <span class="text-[10px] bg-teal-light text-teal px-2 py-0.5 rounded uppercase font-bold tracking-tighter">Pathology</span>
+                  </td>
+                  <td class="py-5 text-navy font-bold">₹499</td>
+                  <td class="py-5 text-right">
+                    <button class="bg-navy text-white text-xs px-4 py-2 rounded-lg hover:bg-teal transition">Add Test</button>
+                  </td>
+                </tr>
+                <tr class="group hover:bg-bg/50 transition">
+                  <td class="py-5">
+                    <p class="text-navy group-hover:text-teal transition">HbA1c (Diabetes Monitoring)</p>
+                    <span class="text-[10px] bg-blue-100 text-blue-600 px-2 py-0.5 rounded uppercase font-bold tracking-tighter">Biochemistry</span>
+                  </td>
+                  <td class="py-5 text-navy font-bold">₹650</td>
+                  <td class="py-5 text-right">
+                    <button class="bg-navy text-white text-xs px-4 py-2 rounded-lg hover:bg-teal transition">Add Test</button>
+                  </td>
+                </tr>
+                <tr class="group hover:bg-bg/50 transition">
+                  <td class="py-5">
+                    <p class="text-navy group-hover:text-teal transition">Lipid Profile (8 Parameters)</p>
+                    <span class="text-[10px] bg-purple-100 text-purple-600 px-2 py-0.5 rounded uppercase font-bold tracking-tighter">Heart Care</span>
+                  </td>
+                  <td class="py-5 text-navy font-bold">₹899</td>
+                  <td class="py-5 text-right">
+                    <button class="bg-navy text-white text-xs px-4 py-2 rounded-lg hover:bg-teal transition">Add Test</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div id="reports" class="reveal bg-navy rounded-[2rem] p-10 text-white relative overflow-hidden shadow-2xl">
+          <div class="absolute top-0 right-0 w-64 h-64 bg-teal/20 blur-[100px] -mr-32 -mt-32"></div>
+          <div class="relative z-10">
+            <div class="flex items-center gap-4 mb-6">
+                <div class="w-12 h-12 bg-teal rounded-2xl flex items-center justify-center text-xl"><i class="fas fa-file-medical"></i></div>
+                <h2 class="font-serif text-3xl">Get Your Digital Report</h2>
+            </div>
+            <p class="text-gray-400 mb-8 max-w-md">Enter your credentials to download your secure, NABL-verified pathology report.</p>
+            <form class="grid md:grid-cols-3 gap-4">
+              <input type="text" placeholder="Visit ID / Bill No." class="bg-white/10 border border-white/10 p-4 rounded-xl outline-none focus:border-teal transition text-sm">
+              <input type="tel" placeholder="Mobile Number" class="bg-white/10 border border-white/10 p-4 rounded-xl outline-none focus:border-teal transition text-sm">
+              <button class="bg-teal hover:bg-white hover:text-navy text-white font-bold rounded-xl transition shadow-lg">Download PDF</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="lg:col-span-1">
+        <div class="bg-white p-8 rounded-[2rem] shadow-[0_20px_50px_rgba(10,22,40,0.05)] border border-gray-100 sticky top-28 reveal">
+          <h3 class="font-serif text-2xl text-navy mb-6">Book Appointment</h3>
+          <form class="space-y-5">
+            <div>
+              <label class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-2 block">Patient Name</label>
+              <input type="text" class="w-full bg-bg p-4 rounded-xl outline-none focus:ring-2 focus:ring-teal/20 border-transparent focus:border-teal transition">
+            </div>
+            <div>
+              <label class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-2 block">Service Type</label>
+              <select class="w-full bg-bg p-4 rounded-xl outline-none border-none">
+                <option>Lab Visit</option>
+                <option>Home Collection (Free)</option>
+              </select>
+            </div>
+            <div>
+              <label class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-2 block">Date</label>
+              <input type="date" class="w-full bg-bg p-4 rounded-xl outline-none border-none">
+            </div>
+            <button class="w-full bg-navy hover:bg-teal text-white py-5 rounded-2xl font-bold transition-all shadow-xl hover:shadow-teal/20 transform hover:-translate-y-1">
+              Confirm Booking
+            </button>
+          </form>
+          <div class="mt-6 p-4 bg-teal-light/50 rounded-xl flex gap-3 items-start">
+            <i class="fas fa-info-circle text-teal mt-1"></i>
+            <p class="text-[11px] text-teal-900 font-medium">For home collections, our technician will call you 30 mins prior to arrival for fasting instructions.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="bg-navy text-gray-400 py-16">
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-12 text-center md:text-left">
+      <div class="col-span-1 md:col-span-2">
+        <span class="font-serif text-2xl text-white">Med<span class="text-teal">Core</span></span>
+        <p class="mt-4 max-w-sm text-sm mx-auto md:mx-0">Providing precise, reliable, and swift diagnostic services to empower your healthcare decisions.</p>
+      </div>
+      <div>
+        <h4 class="text-white font-bold mb-4">Contact</h4>
+        <ul class="space-y-3 text-sm">
+          <li><i class="fas fa-phone mr-2 text-teal"></i> +91 98765 43210</li>
+          <li><i class="fas fa-envelope mr-2 text-teal"></i> info@medcore.com</li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-white font-bold mb-4">Find Us</h4>
+        <a href="https://maps.google.com" target="_blank" class="inline-block border border-gray-600 hover:border-teal text-white text-xs py-2 px-4 rounded transition">Open Google Maps →</a>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/919876512345" target="_blank" class="fixed bottom-6 right-6 bg-[#25D366] text-white w-14 h-14 rounded-full flex items-center justify-center text-3xl shadow-lg hover:scale-110 transition z-50">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
+    });
+    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+  </script>
+</body>
+</html>
